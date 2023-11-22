@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="form">
+    <!--RIAGGIUNGERE-->
+    <!--[formGroup]="formGroup"--> 
+    <form>
+      <div class="book">
+
+        <div class="explode">
+          <label>
+            <span class="text-style"> ignoto: </span>
+            <input type="text" formControlName="title" />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <span class="text-style"> Title: </span>
+            <input type="text" formControlName="titleBook" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="text-style"> Author: </span>
+            <input type="text" formControlName="author" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="text-style"> Genre: </span>
+            <input type="text" formControlName="genre" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="text-style"> Publisher: </span>
+            <input type="text" formControlName="publisher" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="text-style"> Year: </span>
+            <input type="number" formControlName="publish_Year" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="text-style"> Price: </span>
+            <input type="number" formControlName="price" />
+          </label>
+        </div>
+        <div>
+          <label>
+            <span class="description"> Description: </span>
+            <br />
+            <textarea type="text" formControlName="description"></textarea>
+          </label>
+        </div>
+
+        <div class="save">
+          <button class="save-button" (click)="save($event)"> Save </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

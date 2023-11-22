@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Book\BookDto_DELETE_BY_ID.sql" />
+    <None Remove="Resources\Book\BookDto_INSERT.sql" />
+    <None Remove="Resources\Book\BookDto_SELECT_BY_ID.sql" />
+    <None Remove="Resources\Book\BookDto_UPDATE_BY_ID.sql" />
+    <None Remove="Resources\Book\BookListDto_SELECT.sql" />
+    <None Remove="Resources\Book\BookListDto_SELECT_BY_GENRE.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Book\BookDto_DELETE_BY_ID.sql" />
+    <EmbeddedResource Include="Resources\Book\BookDto_INSERT.sql" />
+    <EmbeddedResource Include="Resources\Book\BookDto_SELECT_BY_ID.sql" />
+    <EmbeddedResource Include="Resources\Book\BookDto_UPDATE_BY_ID.sql" />
+    <EmbeddedResource Include="Resources\Book\BookListDto_SELECT.sql" />
+    <EmbeddedResource Include="Resources\Book\BookListDto_SELECT_BY_GENRE.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.21" />
+    <PackageReference Include="FluentValidation" Version="11.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bookshelf.Api.Domain\Bookshelf.Api.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

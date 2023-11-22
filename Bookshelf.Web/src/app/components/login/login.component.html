@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="section1">
+    <img src="../../../assets/images/girl-book.jpg" />
+  </div>
+
+  <div class="section2">
+
+    <!--TORNARE AD AGGIUNGERE [formGroup]="formGroup"-->
+    <form>
+      <div class="username">
+        <label>
+          <span>Username:</span>
+          <br />
+          <input type="text" placeholder="Enter username..." formControlName="username" class="input-user" required />
+        </label>
+      </div>
+      <div class="password">
+        <label>
+          <span>Password:</span>
+          <br />
+          <input type="password" placeholder="Enter password..." formControlName="password" class="input-pass" required />
+        </label>
+      </div>
+      <div class="remember">
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+      <div class="bottons">
+        <button class="cancel" type="submit" (click)="cancel()">Cancel</button>
+        <button class="login" type="submit" (click)="save()">Login</button>
+      </div>
+    </form>
+  </div>
+  
+</div>

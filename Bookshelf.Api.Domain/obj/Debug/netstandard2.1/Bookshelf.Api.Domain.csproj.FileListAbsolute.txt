@@ -1,0 +1,11 @@
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\bin\Debug\netstandard2.1\Bookshelf.Api.Domain.deps.json
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\bin\Debug\netstandard2.1\Bookshelf.Api.Domain.dll
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\bin\Debug\netstandard2.1\Bookshelf.Api.Domain.pdb
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.csproj.AssemblyReference.cache
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.AssemblyInfoInputs.cache
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.AssemblyInfo.cs
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.csproj.CoreCompileInputs.cache
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.dll
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.pdb
+C:\Users\alice.crudele\source\repos\Bookshelf\Bookshelf.Api.Domain\obj\Debug\netstandard2.1\Bookshelf.Api.Domain.sourcelink.json

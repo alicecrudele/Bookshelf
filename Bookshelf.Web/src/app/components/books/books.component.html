@@ -1,0 +1,78 @@
+<div class="searchbar">
+  <search-input (onSearch)="onChangeSearchText($event)"></search-input>
+</div>
+
+<div class="genre-nav">
+  <ul>
+    <li>
+      <a> FICTION </a>
+    </li>
+    <li>
+      <a> MYSTERY </a>
+    </li>
+    <li>
+      <a> THRILLER </a>
+    </li>
+    <li>
+      <a> HORROR </a>
+    </li>
+    <li>
+      <a> HISTORICAL </a>
+    </li>
+    <li>
+      <a> ROMANCE </a>
+    </li>
+    <li>
+      <a> WESTERN </a>
+    </li>
+    <li>
+      <a> SCIENCE FICTION </a>
+    </li>
+    <li>
+      <a> FANTASY </a>
+    </li>
+    <li>
+      <a> POETRY </a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div>
+  <h2>Here you can manage all the book!</h2>
+</div>
+
+<div>
+  <table class="table">
+    <tr class="header-row">
+      <th class="title">TITLE</th>
+      <th class="author">AUTHOR</th>
+      <th class="genre">GENRE</th>
+      <th class="price">PRICE</th>
+      <th class="publish-year">RELEASE YEAR</th>
+      <th class="publisher">PUBLISHER</th>
+      <th>
+
+        <button class="add-button" [routerLink]="['/managebook']">
+          <img src="../../../assets/images/add.svg" class="add-image" />
+          Add book
+        </button>
+
+      </th>
+    </tr>
+    <hr />
+    <tr *ngFor="let book of gridData" (click)="viewEditButtonClick(book, this)" class="book">
+      <td><b>{{book.title}}</b></td>
+      <td>{{book.author}}</td>
+      <td>{{book.genre}}</td> <!--AGGIUNGERE LA PIPE CHE TRASFORMA L'ENUM IN STRINGA-->
+      <td>{{book.price | currency:'EUR'}}</td>
+      <td>{{book.publish_Year}}</td>
+      <td>{{book.publisher}}</td>
+      <td>
+        <img src="../../../assets/images/pen-to-square-regular.svg" class="modify-image" (click)="viewEditButtonClick(book, this)" />
+        <img src="../../../assets/images/trash-solid.svg" (click)="delete(book)" class="delete-image" /> <!--manca il this nel click-->
+      </td>
+    </tr>
+  </table>
+</div>

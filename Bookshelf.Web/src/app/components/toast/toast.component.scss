@@ -1,0 +1,38 @@
+
+div {
+  width: 400px;
+  padding: 10px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.k-notification-servererror {
+  width: 800px;
+  border-color: #f31700;
+  color: #fff;
+  background-color: #f31700;
+}
+
+.k-notification-error {
+  width: 800px;
+  border-color: #f31700;
+  color: #fff;
+  background-color: #f31700;
+}
+
+.close-icon {
+  font-size: 16px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.toast-title {
+  font-family: Montserrat;
+}
+
+.toast-message {
+  word-break: break-all;
+  margin-top: 10px;
+  margin-left: 10px;
+}

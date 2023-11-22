@@ -1,0 +1,11 @@
+<div [ngClass]="{'k-notification-servererror': type == toastType.ServerError,
+                 'k-notification-error': type == toastType.Error,
+                 'k-notification-warning': type == toastType.Warning,
+                 'k-notification-success': type == toastType.Success }" (click)="close($event)">
+  <span class="toast-title" *ngIf="type == toastType.ServerError">{{labelToastError}}:</span>
+  <span class="toast-title" *ngIf="type == toastType.Error">{{labelToastError}}:</span>
+  <span class="toast-title" *ngIf="type == toastType.Warning">{{labelToastWarning}}:</span>
+  <span class="toast-title" *ngIf="type == toastType.Success">{{labelToastInfo}}:</span>
+  <p class="toast-message">{{message}}</p>
+  <i class="fa-regular fa-times close-icon"></i>
+</div>

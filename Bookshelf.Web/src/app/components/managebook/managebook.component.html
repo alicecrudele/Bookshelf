@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Manage Books</h1>
+  <h4>Do you want to add a book?</h4>
+  
+  <div class="book-form">
+
+    <!--TORNARE AD AGGIUNGERE [formGroup]="formGroup"-->
+    <form>
+      <div class="row">
+        <div class="col-md-4 align-inputs">
+          <label>
+            Title:
+            <input type="text" formControlName="title" placeholder="Enter title..." class="input" />
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label>
+            Author:
+            <input type="text" formControlName="author" placeholder="Enter the author name..." class="input" />
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label>
+            Price:
+            <input type="text" formControlName="price" placeholder="Enter the prize of the book..." class="input" />
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label for="genre">
+            Genre:
+            <!--<input type="text" formControlName="genre" placeholder="Enter the genre of the book..." class="input" />-->
+            <div>
+              <select class="dropdown" name="genre" id="genre">
+                <option value="enter">Enter the genre of the book...</option>
+                <option value="fiction">fiction</option>
+                <option value="mystery">mystery</option>
+                <option value="thriller">thriller</option>
+                <option value="horror">horror</option>
+                <option value="historical">historical</option>
+                <option value="romance">romance</option>
+                <option value="western">western</option>
+                <option value="science_fiction">science fiction</option>
+                <option value="fantasy">fantasy</option>
+                <option value="poetry">poetry</option>
+              </select>
+            </div>
+
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label>
+            Release:
+            <input type="text" formControlName="publish_Year" placeholder="Enter only the year when the book was release..." class="input" />
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label>
+            Publisher:
+            <input type="text" formControlName="publisher" placeholder="Enter the name of the publisher..." class="input" />
+          </label>
+        </div>
+        <div class="col-md-4 align-inputs">
+          <label>
+            Description:
+            <input type="text" formControlName="description" placeholder="Enter the description of the book..." class="input" />
+          </label>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <!--TORNARE AD AGGINGERE (click)="cancel($event)"-->
+        <button class="btn btn-primary cancel-book">Cancel</button>
+        <button class="btn btn-primary save-book" (click)="save($event)">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
