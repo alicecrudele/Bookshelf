@@ -17,6 +17,9 @@ export class LoginComponent {
 
   formGroup: FormGroup;
 
+  public show: boolean = false;
+  public buttonName: any = 'Show';
+
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
