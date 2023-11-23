@@ -137,17 +137,17 @@ namespace Bookshelf.Web.Services
 
         }
 
-        public void UpdateBook(long id)
+        public void UpdateBook(long id, BookDto dto)
         {
             try
             {
                 using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    //var bookRepo = new BookDtoRepository(_connectionConfig);
-                    //bookRepo.UpdateBook(id);
+                    var bookRepo = new BookDtoRepository(_connectionConfig);
+                    bookRepo.UpdateBook(id, dto);
 
-                    //scope.Complete();
-                    //return;
+                    scope.Complete();
+                    return;
                 }
             }
             catch (Exception ex)

@@ -60,9 +60,8 @@ export class BooksComponent {
 
 
   // Delete a single book from the list
-  public delete(book: Book) {
+  public delete(book: Book) { 
     this.repositorySvc.deleteBook(book.id, Book).subscribe(
-
       () => {
         this.reloadData();
       },
@@ -82,16 +81,16 @@ export class BooksComponent {
 
 
   public refreshSearchFilter() {
-    //this.gridData = this.originalData.filter(
-    //  (request: Book) =>
-    //    (request.genre != null && request.genre.toString().toUpperCase().includes(this.searchText.toUpperCase()))
-    //    || (request.title != null && request.title.toUpperCase().includes(this.searchText.toUpperCase()))
-    //    || (request.author != null && request.author.toUpperCase().includes(this.searchText.toUpperCase()))
-    //    || (request.price != null && request.price.toString().includes(this.searchText.toUpperCase()))
-    //    || (request.publish_Year != null && request.publish_Year.toString().includes(this.searchText.toUpperCase()))
-    //    || (request.publisher != null && request.publisher.toUpperCase().includes(this.searchText.toUpperCase()))
-    //    || (request.description != null && request.description.toUpperCase().includes(this.searchText.toUpperCase()))
-    //  );
+    this.gridData = this.originalData.filter(
+      (request: Book) =>
+        (request.genre != null && request.genre.toString().toUpperCase().includes(this.searchText.toUpperCase()))
+        || (request.title != null && request.title.toUpperCase().includes(this.searchText.toUpperCase()))
+        || (request.author != null && request.author.toUpperCase().includes(this.searchText.toUpperCase()))
+        || (request.price != null && request.price.toString().includes(this.searchText.toUpperCase()))
+        || (request.publish_Year != null && request.publish_Year.toString().includes(this.searchText.toUpperCase()))
+        || (request.publisher != null && request.publisher.toUpperCase().includes(this.searchText.toUpperCase()))
+        || (request.description != null && request.description.toUpperCase().includes(this.searchText.toUpperCase()))
+      );
   }
 
   public viewEditButtonClick(data: Book, currentContext: BooksComponent) {

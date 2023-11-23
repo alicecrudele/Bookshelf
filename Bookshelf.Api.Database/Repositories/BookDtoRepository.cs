@@ -115,6 +115,8 @@ namespace Bookshelf.Api.Database.Repositories
                 {
                     
                     var query = ResourceHelper.GetResourceAsText($"{DatabaseConst.RESOURCE_BASE_PATH}{DatabaseConst.BASE_PATH_BOOK}{DatabaseConst.BOOK_DTO_UPDATE_BY_ID}");
+                    dto.Id = ((int)id);
+                    connection.Execute(query, param: dto, transaction: tran);
 
 
                     tran.Commit();

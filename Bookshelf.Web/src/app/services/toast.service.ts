@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { PopupRef, PopupService } from "@progress/kendo-angular-popup";
 import { ToastComponent } from "../components/toast/toast.component";
 import { ToastMessage, ToastType } from "../classes/toastMessage";
+import * as $ from 'jquery';
 
 @Injectable()
 export class ToastService {
@@ -26,7 +27,7 @@ export class ToastService {
   }
 
   public openToast(type: ToastType, message: string) {
-    //$('#toast-popup-container').css('width', '50px');
+    $('#toast-popup-container').css('width', '50px');
 
     let bottomOffset = this.initialBottomOffset;
 
@@ -42,7 +43,7 @@ export class ToastService {
       offset: { left: 0, top: bottomOffset }
     });
 
-    //$('kendo-popup:has(toast)').addClass('kendo-toast-popup');
+    $('kendo-popup:has(toast)').addClass('kendo-toast-popup');
 
     popup.content.instance.type = type;
     popup.content.instance.message = message;
@@ -74,7 +75,7 @@ export class ToastService {
     }
 
     if (this.toasts.length === 0) {
-      //$('#toast-popup-container').css('width', '0');
+      $('#toast-popup-container').css('width', '0');
     }
   }
 

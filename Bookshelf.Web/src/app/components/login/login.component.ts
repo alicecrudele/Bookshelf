@@ -15,7 +15,7 @@ import { ToastType } from '../../classes/toastMessage';
 
 export class LoginComponent {
 
-  formGroup: FormGroup | undefined;
+  formGroup: FormGroup;
 
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -24,52 +24,25 @@ export class LoginComponent {
     private commonHelper: CommonHelper,
     private toastSvc: ToastService
   ) {
-    this.route.params.subscribe(params => {
-      if (params) {
-        const paramid = params['id'];
-
-        if (this.commonHelper.isEmptyOrSpaces(paramid)) {
-          // create
-          //this.setFormGroup();
-        } else {
-          
-        }
-      }
-    });
+    this.setFormGroup();
 
   }
 
 
   //riaggiungi l'undefined
-  setFormGroup(item: User) {
+  setFormGroup(item: User = undefined) {
     this.formGroup = this.fb.group({
       username: [{ value: item?.username, disabled: false }, [Validators.required, Validators.email]],
       password: [{ value: item?.password, disabled: false }, [Validators.required]],
     });
   }
 
-  cancel() {
-    this.router.navigate(['/books']);
-  }
-
-
-  save() {
-    this.router.navigate(['/books']);
-
-    //chiama il login
-  }
-
-
   login() {
-
-    //if () { }
-    //else { }
-
-    /*
-        quello scritto nell' input username alice@alice.it e nella password alice allora mostri anche le altre pagine
-        
-        altrimenti mostri un toast di errore e non mostri le altre pagine
-    */
+    if (this.formGroup.value.username == "alice@alice.it" || this.formGroup.value.password == "alice") {
+      this.router.navigate(['/books']);
+    } else {
+      this.toastSvc.openToast(ToastType.Error, "Username o password errati")
+    }
 
   }
 

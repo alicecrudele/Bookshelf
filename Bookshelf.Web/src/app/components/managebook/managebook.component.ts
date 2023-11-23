@@ -18,9 +18,9 @@ export class ManagebookComponent {
   public show: boolean = false;
   public buttonName: any = 'Show';
 
-  formGroup: FormGroup | undefined;
-  public book: Book | undefined;
-  private bookId: number | undefined;
+  formGroup: FormGroup ;
+  public book: Book ;
+  private bookId: number;
   resourceSvc: any;
 
   constructor(private fb: FormBuilder,
@@ -34,31 +34,31 @@ export class ManagebookComponent {
       if (params) {
         const paramid = params['id'];
 
-        //if (this.commonHelper.isEmptyOrSpaces(paramid)) {
-        //  // create
-        //  //this.setFormGroup();
-        //} else {
-        //  // update
-        //  this.bookId = +paramid;
-        //  this.loadData();
-        //}
+        if (this.commonHelper.isEmptyOrSpaces(paramid)) {
+          // create
+          this.setFormGroup();
+        } else {
+          // update
+          this.bookId = +paramid;
+          this.loadData();
+        }
       }
     });
 
   }
 
   private loadData() {
-    //this.repositorySvc.getBook<BookDetail>(this.bookId).then(res => {
-    //  this.book = res;
-    //  this.setFormGroup(res);
-    //}, error => {
-    //  console.log(error);
-    //});
+    this.repositorySvc.getBook<Book>(this.bookId).subscribe(res => {
+      this.book = res;
+      this.setFormGroup(res);
+    }, error => {
+      console.log(error);
+    });
   }
 
 
-  //riaggiungi l'undefined
-  setFormGroup(item: Book) {
+
+  setFormGroup(item: Book = undefined) {
     this.formGroup = this.fb.group({
       id: [{ value: item?.id, disabled: false }],
       title: [{ value: item?.title, disabled: false }, [Validators.required]],
@@ -72,28 +72,26 @@ export class ManagebookComponent {
   }
 
   save(e: any) {
-    //  if (this.formGroup.invalid) {
-    //    //const errors = this.commonHelper.showErrors(
-    //    //  this.formGroup, ['error.required'],
-    //    //  'book',
+      if (this.formGroup.invalid) {
+        //const errors = this.commonHelper.showErrors(
+        //  this.formGroup, ['error.required'],
+        //  'book',
 
-    //      //modificare e togliere la label
-    //      //(label) => {
-    //      //  return this.resourceSvc.getlabel(label);
+          //modificare e togliere la label
+          //(label) => {
+          //  return this.resourceSvc.getlabel(label);
 
-    //      //});
-    //    //errors.forEach(message => this.toastSvc.openToast(ToastType.Warning, message));
-    //    //return;
+          //});
+        //errors.forEach(message => this.toastSvc.openToast(ToastType.Warning, message));
+        //return;
 
-    //  }
+      }
 
-    //  this.repositorySvc.createBook<Book>(this.book).subscribe(res => {
-    //    this.router.navigate(['/books']);
-    //  }, error => {
-    //    console.log(error);
-    //  });
-
-    //}
+    this.repositorySvc.createBook<Book>(this.formGroup.value).subscribe(res => {
+        this.router.navigate(['/books']);
+      }, error => {
+        console.log(error);
+      });
 
   }
 }

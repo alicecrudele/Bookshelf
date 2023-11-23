@@ -62,7 +62,7 @@
       </th>
     </tr>
     <hr />
-    <tr *ngFor="let book of gridData" (click)="viewEditButtonClick(book, this)" class="book">
+    <tr *ngFor="let book of gridData" class="book">
       <td><b>{{book.title}}</b></td>
       <td>{{book.author}}</td>
       <td>{{book.genre}}</td> <!--AGGIUNGERE LA PIPE CHE TRASFORMA L'ENUM IN STRINGA-->
@@ -71,7 +71,7 @@
       <td>{{book.publisher}}</td>
       <td>
         <img src="../../../assets/images/pen-to-square-regular.svg" class="modify-image" (click)="viewEditButtonClick(book, this)" />
-        <img src="../../../assets/images/trash-solid.svg" (click)="delete(book)" class="delete-image" /> <!--manca il this nel click-->
+        <img src="../../../assets/images/trash-solid.svg" (click)="delete(book)" class="delete-image" /> 
       </td>
     </tr>
   </table>

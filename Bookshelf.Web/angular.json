@@ -27,7 +27,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "@progress/kendo-angular-intl/locales/en/all",
+              "@progress/kendo-angular-intl/locales/it/all",
+              "jquery"
+            ]
           },
           "configurations": {
             "production": {

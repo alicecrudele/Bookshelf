@@ -1,21 +1,19 @@
 <div class="container">
   <div class="form">
-    <!--RIAGGIUNGERE-->
-    <!--[formGroup]="formGroup"--> 
-    <form>
+    <form [formGroup]="formGroup">
       <div class="book">
 
         <div class="explode">
           <label>
             <span class="text-style"> ignoto: </span>
-            <input type="text" formControlName="title" />
+            <input type="text" formControlName="titleBook" />
           </label>
         </div>
 
         <div>
           <label>
             <span class="text-style"> Title: </span>
-            <input type="text" formControlName="titleBook" />
+            <input type="text" formControlName="title" />
           </label>
         </div>
         <div>

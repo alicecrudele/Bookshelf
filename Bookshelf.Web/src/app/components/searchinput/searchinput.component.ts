@@ -14,17 +14,17 @@ export class SearchinputComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
-    //  map((event: any) => event.target.value),
-    //  filter((res: string) => res.length > 2 || res.length === 0),
-    //  debounceTime(500),
-    //  distinctUntilChanged()
-    //).subscribe((text: string) => {
-    //  this.onSearch.emit(text);
-    //});
+    fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
+      map((event: any) => event.target.value),
+      filter((res: string) => res.length > 2 || res.length === 0),
+      debounceTime(500),
+      distinctUntilChanged()
+    ).subscribe((text: string) => {
+      this.onSearch.emit(text);
+    });
   }
 
   public setValue(text: string) {
-  //this.searchInput.nativeElement.value = text;
+  this.searchInput.nativeElement.value = text;
   }
 }

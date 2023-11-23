@@ -5,7 +5,6 @@ import { CanActivate } from "@angular/router";
 export class CanActivateGuard implements CanActivate {
   
   canActivate() {
-    console.log("CanActivateGuard");
     return true;
   }
 } 

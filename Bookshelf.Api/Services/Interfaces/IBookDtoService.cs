@@ -9,7 +9,7 @@ namespace Bookshelf.Web.Services.Interfaces
         BookListDto GetBookGenreList();
         BookDto GetBook(long id);
         void CreateBook(BookDto dto);
-        void UpdateBook(long id);
+        void UpdateBook(long id, BookDto dto);
         void DeleteBook(long id);
         
     }

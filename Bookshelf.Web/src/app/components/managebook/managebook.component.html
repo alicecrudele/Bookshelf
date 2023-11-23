@@ -4,8 +4,7 @@
   
   <div class="book-form">
 
-    <!--TORNARE AD AGGIUNGERE [formGroup]="formGroup"-->
-    <form>
+    <form [formGroup]="formGroup">
       <div class="row">
         <div class="col-md-4 align-inputs">
           <label>
@@ -22,7 +21,7 @@
         <div class="col-md-4 align-inputs">
           <label>
             Price:
-            <input type="text" formControlName="price" placeholder="Enter the prize of the book..." class="input" />
+            <input type="number" formControlName="price" placeholder="Enter the prize of the book..." class="input" />
           </label>
         </div>
         <div class="col-md-4 align-inputs">
@@ -30,7 +29,7 @@
             Genre:
             <!--<input type="text" formControlName="genre" placeholder="Enter the genre of the book..." class="input" />-->
             <div>
-              <select class="dropdown" name="genre" id="genre">
+              <select class="dropdown" name="genre" id="genre" formControlName="genre">
                 <option value="enter">Enter the genre of the book...</option>
                 <option value="fiction">fiction</option>
                 <option value="mystery">mystery</option>
@@ -50,7 +49,7 @@
         <div class="col-md-4 align-inputs">
           <label>
             Release:
-            <input type="text" formControlName="publish_Year" placeholder="Enter only the year when the book was release..." class="input" />
+            <input type="number" formControlName="publish_Year" placeholder="Enter only the year when the book was release..." class="input" />
           </label>
         </div>
         <div class="col-md-4 align-inputs">

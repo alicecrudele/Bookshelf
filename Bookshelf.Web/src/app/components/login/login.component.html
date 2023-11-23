@@ -6,8 +6,7 @@
 
   <div class="section2">
 
-    <!--TORNARE AD AGGIUNGERE [formGroup]="formGroup"-->
-    <form>
+    <form [formGroup]="formGroup">
       <div class="username">
         <label>
           <span>Username:</span>
@@ -28,8 +27,7 @@
         </label>
       </div>
       <div class="bottons">
-        <button class="cancel" type="submit" (click)="cancel()">Cancel</button>
-        <button class="login" type="submit" (click)="save()">Login</button>
+        <button class="login" type="submit" (click)="login()">Login</button>
       </div>
     </form>
   </div>

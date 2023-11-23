@@ -59,9 +59,9 @@ public class BookController : Controller
     ///    Modifica di un libro
     /// </summary>
     [HttpPut("[action]/{id}")]
-    public void UpdateBook([FromRoute] long id)
+    public void UpdateBook([FromRoute] long id, [FromBody] BookDto dto)
     {
-        _bookDtoService.UpdateBook(id);
+        _bookDtoService.UpdateBook(id, dto);
     }
 
     /// <summary>

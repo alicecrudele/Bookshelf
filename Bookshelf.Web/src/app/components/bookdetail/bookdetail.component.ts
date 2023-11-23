@@ -16,11 +16,11 @@ import { ToastService } from '../../services/toast.service';
   styleUrls: ['./bookdetail.component.scss']
 })
 export class BookdetailComponent {
-  formGroup: FormGroup | undefined;
+  formGroup: FormGroup;
 
-  public gridData: Book[] | undefined;
-  public originalData: Book[] | undefined;
-  public constantsListener: Observable<GridConstantsConfig> | undefined;
+  public gridData: Book[];
+  public originalData: Book[];
+  public constantsListener: Observable<GridConstantsConfig>;
   private bookId?: number;
   private book?: Book;
 
@@ -48,22 +48,20 @@ export class BookdetailComponent {
       }
     });
   }
-  
-  public loadData()
-  {
-    //this.repositorySvc.getBook<Book>(this.bookId).subscribe(res => {
-    //  console.log('RES: ', res);
-    //  this.book = res;
-    //  this.setFormGroup(res);
-    //}, error => {
-    //  console.log(error);
-    //});
+
+  public loadData() {
+    this.repositorySvc.getBook<Book>(this.bookId).subscribe(res => {
+      console.log('RES: ', res);
+      this.book = res;
+      this.setFormGroup(res);
+    }, error => {
+      console.log(error);
+    });
   }
 
-  //riaggiungi l'undefined
-  setFormGroup(item: Book) {
+  setFormGroup(item: Book = undefined) {
     this.formGroup = this.fb.group({
-      titleBook: [{ value: item?.title, disabled: false }, [Validators.required]],
+      title: [{ value: item?.title, disabled: false }, [Validators.required]],
       author: [{ value: item?.author, disabled: false }, [Validators.required]],
       price: [{ value: item?.price, disabled: false }, [Validators.required]],
       genre: [{ value: item?.genre, disabled: false }, [Validators.required]],
@@ -74,29 +72,23 @@ export class BookdetailComponent {
   }
 
   save(e: any) {
-    //if (this.formGroup.invalid) {
-    //  //const errors = this.commonHelper.showErrors(
-    //  //  this.formGroup, ['error.required'],
-    //  //  'machine',
-    //  //  (label) => {
-    //  //    return this.resourceSvc.getLabel(label);
-    //  //  });
-    //  e.forEach((message: string) => this.toastSvc.openToast(ToastType.Warning, message));
-    //  return;
-  }
-  
-    //if (this.book == null) {
-    //  this.repositorySvc.createBook<FormData>(formData).subscribe(res => {
-    //  }, error => {
-    //    console.log(error);
-    //  });
-    //} else {
-    //  this.repositorySvc.updateBook<FormData>(this.book.id, formData).subscribe(res => {
-    //  }, error => {
-    //    console.log(error);
-    //  });
-    //}
+    if (this.formGroup.invalid) {
+      //const errors = this.commonHelper.showErrors(
+      //  this.formGroup, ['error.required'],
+      //  'machine',
+      //  (label) => {
+      //    return this.resourceSvc.getLabel(label);
+      //  });
+      e.forEach((message: string) => this.toastSvc.openToast(ToastType.Warning, message));
+      return;
+    }
 
-    //this.router.navigate(['/books']);
-  
+    this.repositorySvc.updateBook<Book>(this.bookId, this.formGroup.value).subscribe(res => {
+    }, error => {
+      console.log(error);
+    });
+
+    this.router.navigate(['/books']);
+
+  }
 }
