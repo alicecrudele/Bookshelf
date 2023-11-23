@@ -31,8 +31,6 @@ export class LoginComponent {
 
   }
 
-
-  //riaggiungi l'undefined
   setFormGroup(item: User = undefined) {
     this.formGroup = this.fb.group({
       username: [{ value: item?.username, disabled: false }, [Validators.required, Validators.email]],
@@ -44,7 +42,7 @@ export class LoginComponent {
     if (this.formGroup.value.username == "alice@alice.it" || this.formGroup.value.password == "alice") {
       this.router.navigate(['/books']);
     } else {
-      this.toastSvc.openToast(ToastType.Error, "Username o password errati")
+      this.toastSvc.openToast(ToastType.Error, "Wrong Username or Password")
     }
 
   }
