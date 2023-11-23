@@ -3,9 +3,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { ManagebookComponent } from './components/managebook/managebook.component';
 import { LoginComponent } from './components/login/login.component';
-import { SavedbookComponent } from './components/savedbook/savedbook.component';
 import { BooksComponent } from './components/books/books.component';
-import { GenresComponent } from './components/genres/genres.component';
 import { HomecontentComponent } from './components/homecontent/homecontent.component';
 import { BookdetailComponent } from './components/bookdetail/bookdetail.component';
 import { ElementRef, NgModule } from '@angular/core';
@@ -39,9 +37,7 @@ import { EnumToDescriptionPipe } from './pipes/enum.pipe';
     HomeComponent,
     ManagebookComponent,
     LoginComponent,
-    SavedbookComponent,
     BooksComponent,
-    GenresComponent,
     HomecontentComponent,
     BookdetailComponent,
     ToastComponent,
@@ -84,14 +80,12 @@ import { EnumToDescriptionPipe } from './pipes/enum.pipe';
           }
         ]
       },
-      { path: 'genres', component: GenresComponent },
       {
         path: 'managebook',
         component: ManagebookComponent,
         canActivate: [CanActivateGuard],
         runGuardsAndResolvers: 'always'
       },
-      { path: 'savedbook', component: SavedbookComponent },
       {
         path: 'login',
         component: LoginComponent,

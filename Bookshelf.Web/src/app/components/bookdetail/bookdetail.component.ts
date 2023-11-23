@@ -84,11 +84,13 @@ export class BookdetailComponent {
     }
 
     this.repositorySvc.updateBook<Book>(this.bookId, this.formGroup.value).subscribe(res => {
+      this.router.navigate(['/books']);
+
     }, error => {
       console.log(error);
     });
 
-    this.router.navigate(['/books']);
+    
 
   }
 }

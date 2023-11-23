@@ -29,7 +29,7 @@ export class BooksComponent {
     private repositorySvc: RepositoryService,
   ) {
 
-    this.currentContext = this;
+    //this.currentContext = this;
 
     this.gridData = [];
 
