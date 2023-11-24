@@ -100,14 +100,9 @@ namespace Bookshelf.Web.Services
             {
                 BookDto dto = null;
 
-                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
-                {
-
-                    var bookRepo = new BookDtoRepository(_connectionConfig);
-                    dto = bookRepo.GetBook(id);
-
-                    scope.Complete();
-                }
+                var bookRepo = new BookDtoRepository(_connectionConfig);
+                dto = bookRepo.GetBook(id);
+               
                 return dto;
             }
             catch (Exception ex)

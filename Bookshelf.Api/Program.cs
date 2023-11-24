@@ -1,4 +1,3 @@
-
 using Bookshelf.Api.Domain.Configurations;
 using Bookshelf.Web.Services;
 using Bookshelf.Web.Services.Interfaces;
@@ -21,6 +20,9 @@ builder.Services.AddControllers().AddJsonOptions(opt =>
 {
     opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
+
+
+// SWAGGER
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
