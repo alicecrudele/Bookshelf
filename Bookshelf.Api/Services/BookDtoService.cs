@@ -73,9 +73,9 @@ namespace Bookshelf.Web.Services
                 var bookRepo = new BookDtoRepository(_connectionConfig);
                 return bookRepo.GetBookList();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -87,9 +87,9 @@ namespace Bookshelf.Web.Services
                 var bookRepo = new BookDtoRepository(_connectionConfig);
                 return bookRepo.GetBookGenreList();
             }
-            catch (Exception ex) 
-            { 
-                throw ex;
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -105,9 +105,9 @@ namespace Bookshelf.Web.Services
                
                 return dto;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
         }
@@ -125,9 +125,9 @@ namespace Bookshelf.Web.Services
                     return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
         }
@@ -145,9 +145,9 @@ namespace Bookshelf.Web.Services
                     return;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
         }
@@ -166,9 +166,9 @@ namespace Bookshelf.Web.Services
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }

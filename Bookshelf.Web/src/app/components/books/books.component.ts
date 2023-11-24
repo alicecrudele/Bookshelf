@@ -6,7 +6,6 @@ import { BookList } from '../../classes/book-list';
 import { Observable } from 'rxjs';
 import { CommonService } from '../../services/common.service';
 import { SessionService } from '../../services/session.service';
-import { GridColumn, GridConstantsConfig } from '../../interfaces/gridColumn.interface';
 import { Context } from '@progress/kendo-angular-grid/filtering/filter-host.directive';
 
 @Component({
@@ -16,10 +15,8 @@ import { Context } from '@progress/kendo-angular-grid/filtering/filter-host.dire
 })
 export class BooksComponent {
   public currentContext: BooksComponent;
-  public columns: GridColumn[] = [];
   public gridData: Book[];
   public originalData: Book[] | undefined;
-  public constantsListener: Observable<GridConstantsConfig> | undefined;
   public searchText: string | undefined;
 
   //public actions: BaseButtonAction[] = [];

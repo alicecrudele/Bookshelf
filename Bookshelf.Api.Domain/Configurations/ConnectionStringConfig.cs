@@ -17,7 +17,7 @@ namespace Bookshelf.Api.Domain.Configurations
         /// <value>
         /// The name.
         /// </value>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the provider.
@@ -25,7 +25,7 @@ namespace Bookshelf.Api.Domain.Configurations
         /// <value>
         /// The name of the provider.
         /// </value>
-        public string ProviderName { get; set; }
+        public string? ProviderName { get; set; }
 
         /// <summary>
         /// Gets or sets the connection string.
@@ -33,6 +33,6 @@ namespace Bookshelf.Api.Domain.Configurations
         /// <value>
         /// The connection string.
         /// </value>
-        public string ConnectionString { get; set; }
+        public string? ConnectionString { get; set; }
     }
 }

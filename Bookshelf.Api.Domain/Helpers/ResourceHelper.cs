@@ -5,7 +5,7 @@ namespace Bookshelf.Domain.Helpers
 {
   public static class ResourceHelper
   {
-      public static bool ResourceExists(string resourcePath, Assembly assembly = null)
+      public static bool ResourceExists(string resourcePath, Assembly? assembly = null)
     {
       if (assembly == null) assembly = Assembly.GetCallingAssembly();
       return RawResourceExists(assembly, resourcePath);
@@ -18,7 +18,7 @@ namespace Bookshelf.Domain.Helpers
     /// <param name="assembly">The assembly.</param>
     /// <returns></returns>
     /// <exception cref="FileNotFoundException"></exception>
-    public static string GetResourceAsText(string resourcePath, Assembly assembly = null)
+    public static string GetResourceAsText(string resourcePath, Assembly? assembly = null)
     {
       if (assembly == null) assembly = Assembly.GetCallingAssembly();
       return RawGetResourceAsText(assembly, resourcePath);
@@ -36,7 +36,7 @@ namespace Bookshelf.Domain.Helpers
     /// <param name="resourcePath">The resource path.</param>
     /// <param name="assembly">The assembly.</param>
     /// <returns></returns>
-    public static Stream GetResourceAsStream(string resourcePath, Assembly assembly = null)
+    public static Stream GetResourceAsStream(string resourcePath, Assembly? assembly = null)
     {
       if (assembly == null) assembly = Assembly.GetCallingAssembly();
       return RawGetResourceAsStream(assembly, resourcePath);

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../classes/book';
-import { Observable } from 'rxjs';
-import { GridConstantsConfig } from '../../interfaces/gridColumn.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RepositoryService } from '../../services/repository.service';
-import { CommonService } from '../../services/common.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonHelper } from '../../helpers/common.helper';
 import { ToastType } from '../../classes/toastMessage';
@@ -20,10 +17,8 @@ export class BookdetailComponent {
 
   public gridData: Book[];
   public originalData: Book[];
-  public constantsListener: Observable<GridConstantsConfig>;
   private bookId?: number;
   private book?: Book;
-
 
   constructor(
     private fb: FormBuilder,
