@@ -22,9 +22,6 @@ export class RepositoryService {
     this.baseUrl = baseUrl;
   }
 
-  // Dove vengono fatte le chiamate
-
-
   //#region BOOK
 
   public getBookList<T>() {
@@ -64,7 +61,6 @@ export class RepositoryService {
 
   //#region LABEL
   public getAllLabels<T>() {
-    /*return this.getWithLinkBase<T>(this.http, this.constantHelper.DATA_GET_ALL_LABELS, undefined);*/
     throw new Error('Method not implemented.');
   }
 

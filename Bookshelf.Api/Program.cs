@@ -13,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionStringsConfigSection = builder.Configuration.GetSection("ConnectionStrings");
 builder.Services.Configure<ConnectionConfig>(connectionStringsConfigSection);
 
+// Interface + Service
 builder.Services.AddTransient<IBookDtoService, BookDtoService>();
+
 
 builder.Services.AddControllers().AddJsonOptions(opt =>
 {

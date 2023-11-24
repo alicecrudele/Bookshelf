@@ -9,25 +9,10 @@ export class ResourceService {
   private resources: { [key: string]: string; } = {};
   private resources$: Observable<ILabel[]> | undefined;
 
-  constructor(
-    private repositorySvc: RepositoryService,
-  ) {
+  constructor() {
   }
 
-  //public initializeLabels(): Observable<ILabel[] | void> {
-  //  if (!this.resources$ && this.hasLabels()) {
-  //    this.resources$ = of<ILabel[]>([]);
-  //  } else if (!this.resources$ && !this.hasLabels()) {
-  //    this.resources$ = this.repositorySvc.getAllLabelsObs().pipe(
-  //      tap((result: ILabel[]) => this.setLabels(result))
-  //    );
-  //  }
-
-  //  return this.resources$.pipe(
-  //    tap(() => this.resources$ = undefined, () => this.resources$ = undefined),
-  //    share()
-  //  );
-  //}
+  
   public hasLabels(): boolean {
     return (Object.keys(this.resources).length > 0);
   }

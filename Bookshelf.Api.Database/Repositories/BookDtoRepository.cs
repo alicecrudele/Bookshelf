@@ -121,8 +121,6 @@ namespace Bookshelf.Api.Database.Repositories
 
                     tran.Commit();
                 }
-                    
-
                 connection.Close();
             }
 
@@ -132,10 +130,14 @@ namespace Bookshelf.Api.Database.Repositories
         {
             using (IDbConnection connection = sqlConnectionFactory.CreateConnection())
             {
+                using (var tran = connection.BeginTransaction())
+                {
 
-                var query = ResourceHelper.GetResourceAsText($"{DatabaseConst.RESOURCE_BASE_PATH}{DatabaseConst.BASE_PATH_BOOK}{DatabaseConst.BOOK_DTO_DELETE_BY_ID}");
-                connection.Execute(query, param: new { Id = id });
-
+                    var query = ResourceHelper.GetResourceAsText($"{DatabaseConst.RESOURCE_BASE_PATH}{DatabaseConst.BASE_PATH_BOOK}{DatabaseConst.BOOK_DTO_DELETE_BY_ID}");
+                    connection.Execute(query, param: new { Id = id });
+                    tran.Commit();
+                    
+                }
                 connection.Close();
             }
 
